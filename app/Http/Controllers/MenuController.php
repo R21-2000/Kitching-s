@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 class MenuController extends Controller
 {
     public function __construct()
@@ -13,7 +10,6 @@ class MenuController extends Controller
         $this->middleware('auth');
         $this->middleware('role:admin|waiter');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +18,6 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::all();
-
         return view('menus.index', compact('menus'));
     }
 }

@@ -1,7 +1,5 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +10,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/menu', 'LoginController@showLoginForm')->name('login');
 Route::get('/login', 'LoginController@showLoginForm')->name('login');
-
 Route::get('/', function () {
     return view('login');
 });

@@ -4,38 +4,49 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class LoginController extends Controller
 {
-    /**
-     * Display the login form.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function showLoginForm()
+    public function index()
     {
         return view('login');
     }
 
-    /**
-     * Handle the login request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function login(Request $request)
+    public function store(Request $request)
     {
-        $iduser = $request->input('iduser');
-        $namauser = $request->input('namauser');
+        $credentials = $request->only('iduser', 'namauser');
 
-        $user = User::where('iduser', $iduser)->where('namauser', $namauser)->first();
+        $user = User::where('iduser', $credentials['iduser'])
+            ->where('namauser', $credentials['namauser'])
+            ->first();
 
         if ($user) {
-            auth()->login($user);
-            return redirect()->intended('/');
-        }
+            Auth::login($user);
 
-        return back()->withErrors([
-            'iduser' => 'ID user atau nama user salah.',
-        ]);
+            // Set level user
+            $request->session()->put('level', $user->level);
+
+            return redirect('/');
+            if(Auth::attempt($credentials))
+        {
+            $request->session()->regenerate();
+
+            if(Auth::user()->roles == 'admin')
+            {
+                return redirect()->route('dashboard-admin');
+            }
+            if(Auth::user()->roles == 'waiter')
+            {
+                return redirect()->route('dashboard-waiter');
+            }
+            if(Auth::user()->roles == 'kasir')
+            {
+                return redirect()->route('dashboard-kasir');
+            }
+        }
+        } else {
+            return redirect('/login')->withErrors(['credentials' => 'Id atau Nama Typo nih.']);
+        }
     }
 }

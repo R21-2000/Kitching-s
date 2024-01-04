@@ -8,21 +8,51 @@
     <style>
         body {
             font-family: sans-serif;
+            background-color: #f5f5f5; /* Warna latar belakang */
+            color: #333; /* Warna teks utama */
         }
+
         .container {
             max-width: 500px;
             margin: 0 auto;
+            background-color: #fff; /* Warna latar belakang container */
+            border-radius: 10px; /* Sudut tumpul untuk container */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus */
         }
+
+        .card-header {
+            background-color: #4a5568; /* Warna header */
+            color: #fff; /* Warna teks header */
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px 10px 0 0; /* Sudut tumpul atas */
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
         .form-control {
-            border-radius: 0;
+            border-radius: 5px;
+            border-color: #ced4da; /* Warna border input */
         }
+
         .btn {
-            border-radius: 0;
+            background-color: #4a5568; /* Warna tombol */
+            color: #fff; /* Warna teks tombol */
+            border-radius: 5px;
         }
+
         .login-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-radius: 10px 10px 0 0; /* Sudut tumpul untuk gambar */
+        }
+
+        .alert-danger {
+            background-color: #f8d7da; /* Warna pesan error */
+            border-color: #f5c6cb;
         }
     </style>
 </head>
