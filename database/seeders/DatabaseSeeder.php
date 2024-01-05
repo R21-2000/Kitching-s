@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +20,32 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $users = [
+            [
+                'username' => 'Admin',
+                'password' => bcrypt('admin123'),
+                'role' => 'ADMIN'
+            ],
+            [
+                'username' => 'Waiter',
+                'password' => bcrypt('manager123'),
+                'role' => 'WAITER'
+            ],
+            [
+                'username' => 'Kasir',
+                'password' => bcrypt('kasir123'),
+                'role' => 'KASIR'
+            ],
+            [
+                'username' => 'Owner',
+                'password' => bcrypt('owner123'),
+                'role' => 'OWNER   '
+            ]
+        ];
+
+        foreach ($users as $key => $value) {
+            User::create($value);
+        }
     }
 }

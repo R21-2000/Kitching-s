@@ -2,31 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Pesanan extends Model
 {
+    use HasFactory;
+
     protected $table = 'pesanan';
 
     protected $fillable = [
-        'idpesanan',
-        'idmenus',
-        'idpelanggan',
-        'jumlah',
-        'total',
-        'bayar',
-        'status',
+        'id_menu',
+        'id_pelanggan',
+        'id_user',
+        'jumlah'
     ];
 
-    public function menu()
-    {
-        return $this->belongsTo(Menu::class, 'idmenus', 'id');
-    }
-
-    public function pelanggan()
-    {
-        return $this->belongsTo(Pelanggan::class, 'idpelanggan', 'id');
-    }
-
-    // Tambahkan fungsi relasi lainnya jika ada
+    protected $hidden = [];
 }

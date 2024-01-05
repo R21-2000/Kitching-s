@@ -2,23 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    protected $table = 'menus';
+    use HasFactory;
+
+    protected $table = 'menu';
 
     protected $fillable = [
-        'idmenu',
-        'namamenu',
+        'nama_menu',
         'harga',
-        // Tambahkan field tambahan jika ada
     ];
 
-    public function pesanan()
-    {
-        return $this->hasMany(Pesanan::class, 'idmenus', 'id');
-    }
-
-    // Tambahkan fungsi relasi lainnya jika ada
+    protected $hidden = [];
 }

@@ -4,65 +4,77 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Pesanan;
-use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PesananController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('role:waiter');
-    }
-
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $pesanan = Pesanan::all();
-
-        return view('pesanan.index', compact('pesanan'));
+        //
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(string $id)
     {
-        $menus = Menu::all();
-        $pelanggan = Pelanggan::all();
+        $menu = Menu::all();
+        $id_pelanggan = $id;
 
-        return view('pesanan.create', compact('menus', 'pelanggan'));
+        return view('pages.pesanan.add', [
+            'menu' => $menu,
+            'id_pelanggan' => $id_pelanggan
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, string $id)
     {
-        $request->validate([
-            'idmenus' => 'required',
-            'idpelanggan' => 'required',
-            'jumlah' => 'required',
+        Pesanan::create([
+            'id_menu' => $request->id_menu,
+            'id_pelanggan' => $id,
+            'id_user' => Auth::user()->id,
+            'jumlah' => $request->jumlah
         ]);
 
-        $pesanan = new Pesanan();
-        $pesanan->idmenus = $request->input('idmenus');
-        $pesanan->idpelanggan = $request->input('idpelanggan');
-        $pesanan->jumlah = $request->input('jumlah');
-        $pesanan->iduser = Auth::id();
+        return redirect()->route('pesanan-for', $id);
+    }
 
-        $pesanan->save();
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
 
-        return redirect()->route('pesanan.index');
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
 }

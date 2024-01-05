@@ -2,7 +2,9 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
+    <FilesMatch "^.*\.svg$">
+    Allow from all
+    </FilesMatch>
     RewriteEngine On
 
     # Handle Authorization Header
