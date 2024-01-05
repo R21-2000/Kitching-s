@@ -11,7 +11,7 @@
                                 <div class="card-header pb-0 text-start">
                                     <div class="d-flex py-5 w-100 align-items-center">
                                         <div class="w-25">
-                                            <img src="/template/assets/img/app-icon.png" class="w-50" alt="">
+                                            <img src="/template/assets/img/quest-flag.png" class="w-50" alt="">
                                         </div>
                                         <div class="w-75 align-items-center">
                                             <p class="font-weight-bolder mt-3">Kitching's</p>
@@ -48,12 +48,9 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                                style="background-image: url('/template/assets/img/login-image.jpg');
+                                style="background-image: url('/template/assets/img/resto1.jfif');
           background-size: cover;">
                                 <span class="mask bg-black opacity-6"></span>
-                                <h2 class="mt-5 text-white font-weight-bolder position-relative">"Yoroshiku"
-                                </h2>
-                                <p class="text-white position-relative">isi paan yak aowkawokwaokawok</p>
                             </div>
                         </div>
                     </div>

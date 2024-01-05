@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Pesanan;
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,6 +16,11 @@ class PesananController extends Controller
     public function index()
     {
         //
+        $data = Pelanggan::all();
+
+        return view('pages.pesanan.index', [
+            'data' => $data,
+        ]);
     }
 
     /**
@@ -52,6 +58,13 @@ class PesananController extends Controller
     public function show(string $id)
     {
         //
+        $data = Pesanan::where('id_pelanggan', $id)->get();
+        $id_pelanggan = $id;
+
+        return view('pages.pesanan.show', [
+            'data' => $data,
+            'id_pelanggan' => $id_pelanggan
+        ]);
     }
 
     /**
@@ -65,16 +78,28 @@ class PesananController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id, $id_pelanggan)
     {
         //
+        $item = Pesanan::findOrFail($id);
+        $item->update(
+            [
+                'jumlah' => $request->jumlah
+            ]
+        );
+
+        return redirect()->route('pesanan.show', $id_pelanggan);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id, $id_pelanggan)
     {
         //
+        $item = Pesanan::findOrFail($id);
+        $item->delete();
+
+        return redirect()->route('pesanan.show', $id_pelanggan);
     }
 }
