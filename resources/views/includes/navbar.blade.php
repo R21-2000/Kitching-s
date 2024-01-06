@@ -3,8 +3,8 @@
     data-scroll="false">
     <div class="mt-4 container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-            <svg class="icon" src="assets/img/menu.svg" alt="Menu icon"></svg>            
-            <h4 class="font-weight-bolder text-white mb-0">Oui-oui~</h4>
+            <img src="/template/assets/img/kastil.png">
+            <h4 class="font-weight-bolder text-white mb-0">"The tavern was a crossroads for travelers from all over the world, each with their own stories to tell."~</h4>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">

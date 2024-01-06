@@ -5,9 +5,9 @@
         <div class="col-12">
             <div class="card py-4">
                 <div class="card-header pb-0">
-                    <h5>Menu Table</h5>
+                    <h5>Tabel Pesanan</h5>
                 </div>
-                <a href="{{ route('pesanan-for', $id_pelanggan) }}" class="btn btn-success m-4">Add New Menu</a>
+                <a href="{{ route('pesanan-for', $id_pelanggan) }}" class="btn btn-success m-4">tambah pesanan</a>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-2">

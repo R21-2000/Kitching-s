@@ -23,23 +23,23 @@ class DatabaseSeeder extends Seeder
 
         $users = [
             [
-                'username' => 'Admin',
-                'password' => bcrypt('admin123'),
+                'username' => 'Admin1',
+                'password' => bcrypt('adminn'),
                 'role' => 'ADMIN'
             ],
             [
                 'username' => 'Waiter',
-                'password' => bcrypt('manager123'),
+                'password' => bcrypt('Weiter'),
                 'role' => 'WAITER'
             ],
             [
                 'username' => 'Kasir',
-                'password' => bcrypt('kasir123'),
+                'password' => bcrypt('kasirr'),
                 'role' => 'KASIR'
             ],
             [
                 'username' => 'Owner',
-                'password' => bcrypt('owner123'),
+                'password' => bcrypt('auner'),
                 'role' => 'OWNER   '
             ]
         ];

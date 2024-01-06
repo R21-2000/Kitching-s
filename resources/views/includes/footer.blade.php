@@ -7,7 +7,7 @@
                     <script>
                         document.write(new Date().getFullYear())
                     </script>,
-                    <i class="fa fa-shield"></i> by the Guild owner
+                    <i class="fa fa-shield"></i> @R21
                 </div>
             </div>
             <div class="col-lg-6">

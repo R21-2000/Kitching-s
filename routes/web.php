@@ -7,17 +7,6 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PesananController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', [AuthController::class, 'index'])->name('login');
 Route::post('/login-authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
@@ -34,7 +23,8 @@ Route::middleware(['auth', 'isWaiter'])->group(function () {
     Route::resource('/customer', PelangganController::class);
     Route::resource('/pesanan', PesananController::class);
     Route::get('/create-pesanan/{id}', [PesananController::class, 'create'])->name('pesanan-for');
-    Route::get('/add-pesanan/{id}', [PesananController::class, 'store'])->name('add-pesanan');
+    // Perubahan di sini: metode HTTP diubah menjadi POST
+    Route::post('/add-pesanan/{id}', [PesananController::class, 'store'])->name('add-pesanan');
     Route::post('/edit-pesanan/{id}/{id_pengguna}', [PesananController::class, 'update'])->name('edit-pesanan');
     Route::delete('/delete-pesanan/{id}/{id_pengguna}', [PesananController::class, 'destroy'])->name('delete-pesanan');
 });

@@ -5,7 +5,7 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h5>Edit Data Menu</h5>
+                    <h5>Apa yang mau diubah ??</h5>
                 </div>
                 <div class="card-body px-4 py-4">
                     <form role="form" method="POST" action="{{ route('menu.update', $data->id) }}">
@@ -30,20 +30,17 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <div class="d-flex justify-content-center align-items-center" style="height: 250px">
-                                            <i class="fa-solid fa-question fa-beat fa-2xl h-75" style="color: #ffae00;"></i>
+                                        <div class="d-flex justify-content-center align-items-center">
+                                          <img src="/template/assets/img/tandatanya.png">
                                         </div>
-
                                         <div class="text-center">
-                                            <h4>Are you sure want to edit this?</h4>
+                                          <h4>Pastiin data udah valid</h4>
                                         </div>
-                                    </div>
+                                      </div>                                      
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-
-                                        <button type="submit" class="btn btn-warning">Update</button>
-
+                                            data-bs-dismiss="modal">Cek dulu deh</button>
+                                        <button type="submit" class="btn btn-warning">Lanjut</button>
                                     </div>
                                 </div>
                             </div>

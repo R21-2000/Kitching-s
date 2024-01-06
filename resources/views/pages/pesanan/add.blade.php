@@ -25,7 +25,7 @@
                                 <div class="text-center">
                                     <h4 class="my-4">{{ $item->nama_menu }}</h4>
                                     <div class="d-flex">
-                                        <label for="jumlah" class="">Qty.</label>
+                                        <label for="jumlah" class="">Kuantitas</label>
                                     </div>
                                     <input type="number" class="form-control" name="jumlah">
                                     <input type="text" value="{{ $item->id }}" class="form-control" name="id_menu"

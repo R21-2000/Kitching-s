@@ -5,27 +5,28 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header pb-0">
-                    <h5>Menu Table</h5>
+                    <h5>List Menu</h5>
                 </div>
-                <a href="{{ route('menu.create') }}" class="btn btn-success m-4">Add New Menu</a>
+                <a href="{{ route('menu.create') }}" class="btn btn-success m-4">Menu baru</a>
                 <div class="card-body px-0 pt-0 pb-2">
                     <div class="table-responsive p-0">
                         <table class="table align-items-center mb-2">
                             <thead>
-                                <tr>
+                                <tr style="color: #6c584c">
                                     <th
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7">
-                                        #
+                                        id
                                     </th>
                                     <th
                                         class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 w-50">
-                                        Nama</th>
+                                        Nama Menu</th>
                                     <th
                                         class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Harga</th>
-                                    <th
-                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Aksi</th>
+                                        Harga Menu</th>
+                                        <th 
+                                        class="text-center text-uppercase text-secondary text-xxs font-weight-bold">
+                                        <span style="color: #6c584c"></span>
+                                        Atur</th>                            
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,7 +61,7 @@
                                                     <div class="d-flex justify-content-center align-items-center"
                                                         style="height: 250px">
                                                         <i class="fa-solid fa-exclamation fa-bounce fa-2xl h-75"
-                                                            style="color: #ea2e2e;"></i>
+                                                            style="color: ##6c584c;"></i>
                                                     </div>
 
                                                     <div class="text-center">

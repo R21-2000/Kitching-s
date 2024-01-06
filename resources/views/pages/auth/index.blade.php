@@ -18,7 +18,7 @@
                                         </div>
 
                                     </div>
-                                    <h4 class="font-weight-bolder">Sign In</h4>
+                                    <h4 class="font-weight-bolder">Login</h4>
                                     <p class="mb-0">Diisi datanya ya :D</p>
                                 </div>
                                 <div class="card-body">
@@ -26,19 +26,15 @@
                                         @csrf
                                         <div class="mb-3">
                                             <input type="text" class="form-control form-control-lg"
-                                                placeholder="Username" aria-label="Username" name="username">
+                                                placeholder="Isi Username disini" aria-label="Username" name="username">
                                         </div>
                                         <div class="mb-3">
                                             <input type="password" class="form-control form-control-lg"
-                                                placeholder="Password" aria-label="Password" name="password">
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="showPw">
-                                            <label class="form-check-label" for="showPw">Cek dulu</label>
+                                                placeholder="Isi Password disini" aria-label="Password" name="password">
                                         </div>
                                         <div class="text-center">
                                             <button type="submit"
-                                                class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Masuk</button>
+                                                class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Gas</button>
                                         </div>
                                     </form>
                                 </div>
@@ -48,7 +44,7 @@
                         <div
                             class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
                             <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden"
-                                style="background-image: url('/template/assets/img/resto1.jfif');
+                                style="background-image: url('/template/assets/img/resto3.jfif');
           background-size: cover;">
                                 <span class="mask bg-black opacity-6"></span>
                             </div>
