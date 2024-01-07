@@ -5,27 +5,28 @@
         <a class="navbar-brand m-0" href="{{ route('index') }}">
             <img src="/template/assets/img/task.png">
         </a>
-    </div>    
-    <hr class="horizontal dark">
+    </div>
+    <hr class="horizontal dark mt-0">
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
         <ul class="navbar-nav">
             @if (Auth::user()->role == 'ADMIN')
-                <li class="nav-item">
-                    <a class="nav-link " href="{{ route('menu.index') }}">
-                        <div>
-                            <img src="/template/assets/img/buk.png">
-                        </div>
-                        <span class="nav-link-text ms-1">Menu</span>
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('menu.index') }}">
+                    <div>
+                        <img src="/template/assets/img/buk.png">
+                    </div>
+                    <span class="nav-link-text ms-1">Menu</span>
+                </a>
+            </li>
             @endif
+
             @if (Auth::user()->role == 'WAITER')
                 <li class="nav-item">
                     <a class="nav-link " href="{{ route('menu.index') }}">
                         <div>
                             <img src="/template/assets/img/buk.png">
                         </div>
-                        <span class="nav-link-text ms-1">Menu</span>
+                        <span class="nav-link-text ms-1">Daftar Menu</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -33,7 +34,7 @@
                         <div>
                             <img src="/template/assets/img/addorder.png">
                         </div>
-                        <span class="nav-link-text ms-1">Buat Pesanan</span>
+                        <span class="nav-link-text ms-1">Pesanan Baru</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -45,23 +46,22 @@
                     </a>
                 </li>
             @endif
+
             @if (Auth::user()->role == 'KASIR')
                 <li class="nav-item">
-                    <a class="nav-link " href="./pages/billing.html">
+                    <a class="nav-link " href="{{ route('transaksi.index') }}">
                         <div>
-                            <img src="/template/assets/img/transaksi.png">
+                        <img src="/template/assets/img/transaksi.png">
                         </div>
-                        <span class="nav-link-text ms-1">Transaksi</span>
+                        <span class="nav-link-text ms-1">Bayar</span>
                     </a>
                 </li>
-            @endif            
+            @endif
             <li class="nav-item px-1 mt-0">
                 <a class="nav-link btn btn-danger" href="{{ route('logout') }}">
                     <span class="text-white">Logout</span>
                 </a>
             </li>
-
         </ul>
     </div>
-
 </aside>

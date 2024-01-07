@@ -15,7 +15,8 @@ class Pesanan extends Model
         'id_menu',
         'id_pelanggan',
         'id_user',
-        'jumlah'
+        'jumlah',
+        'status',
     ];
 
     protected $hidden = [];

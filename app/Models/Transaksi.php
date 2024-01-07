@@ -12,9 +12,12 @@ class Transaksi extends Model
     protected $table = 'transaksi';
 
     protected $fillable = [
-        'nama',
-        'password',
-        'role'
+        'id_pelanggan',
+        'total',
+        'bayar',
+        'updated_at',
+        'created_at',
+        'id_menu',
     ];
 
     protected $hidden = [];

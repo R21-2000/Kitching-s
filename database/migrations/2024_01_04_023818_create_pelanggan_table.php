@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('jenis_kelamin')->nullable();
             $table->string('no_hp')->nullable();
             $table->longText('alamat')->nullable();
+            $table->string('status', 20)->nullable();
             $table->timestamps();
         });
     }
